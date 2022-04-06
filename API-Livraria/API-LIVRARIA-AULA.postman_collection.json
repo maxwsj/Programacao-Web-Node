@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c4291d46-b269-4aa1-a37f-ea0aae5e8e9e",
+		"_postman_id": "637ea4bc-05ec-4825-af82-a326525a0981",
 		"name": "API-LIVRARIA-AULA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,15 +14,32 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categoria/listarCategoria",
-							"protocol": "http",
+							"raw": "{{URL}}/categoria/listarCategoria",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categoria",
 								"listarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarCategoriaID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/categoria/listarCategoria/12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"categoria",
+								"listarCategoria",
+								"12"
 							]
 						}
 					},
@@ -33,13 +50,20 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_categoria\":\"Banco de Dados\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/categoria/cadastrarCategoria",
-							"protocol": "http",
+							"raw": "{{URL}}/categoria/cadastrarCategoria",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categoria",
 								"cadastrarCategoria"
@@ -53,13 +77,20 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"nome_categoria\":\"PROGRAMAÇÃO WEB 3\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/categoria/alterarCategoria",
-							"protocol": "http",
+							"raw": "{{URL}}/categoria/alterarCategoria",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categoria",
 								"alterarCategoria"
@@ -73,16 +104,191 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/categoria/excluirCategoria",
-							"protocol": "http",
+							"raw": "{{URL}}/categoria/excluirCategoria",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "3000",
 							"path": [
 								"categoria",
 								"excluirCategoria"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LIVRO",
+			"item": [
+				{
+					"name": "cadastrarLivro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "O Pato",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "80",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/maxnt/Documents/pato/pato.jpg",
+										"/C:/Users/maxnt/Documents/pato/taruga.jpg"
+									]
+								},
+								{
+									"key": "detalhes",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sapien enim, rutrum eget laoreet eu, semper vitae eros. Etiam rhoncus massa dui, a ultricies tortor eleifend vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat. Integer pretium est dolor, facilisis tincidunt odio fringilla eu. Suspendisse auctor iaculis ligula ac sodales. Etiam dignissim nunc vestibulum turpis porttitor convallis. Donec id felis nunc. Proin eget massa nisl. Vestibulum a tortor magna. Vivamus eget urna eget quam rhoncus elementum eget at magna. Cras porttitor in purus id dignissim. Cras dignissim ex massa, eget scelerisque augue cursus a. Aenean non libero vitae lectus luctus dignissim.",
+									"type": "text"
+								},
+								{
+									"key": "tblCategoriaumId",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/livro/cadastrarLivro",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"livro",
+								"cadastrarLivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizarLivro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "O Pato 2",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "80",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/maxnt/Documents/pato/patoEvolve.jpg",
+										"/C:/Users/maxnt/Documents/pato/tarugaEvolve.jpg"
+									]
+								},
+								{
+									"key": "detalhes",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sapien enim, rutrum eget laoreet eu, semper vitae eros. Etiam rhoncus massa dui, a ultricies tortor eleifend vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat. Integer pretium est dolor, facilisis tincidunt odio fringilla eu. Suspendisse auctor iaculis ligula ac sodales. Etiam dignissim nunc vestibulum turpis porttitor convallis. Donec id felis nunc. Proin eget massa nisl. Vestibulum a tortor magna. Vivamus eget urna eget quam rhoncus elementum eget at magna. Cras porttitor in purus id dignissim. Cras dignissim ex massa, eget scelerisque augue cursus a. Aenean non libero vitae lectus luctus dignissim.",
+									"type": "text"
+								},
+								{
+									"key": "tblCategoriaumId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/livro/editarLivro",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"livro",
+								"editarLivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarLivro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/livro/listarLivro",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"livro",
+								"listarLivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarLivroCódigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/livro/listarLivroCodigo/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"livro",
+								"listarLivroCodigo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluirLivro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/livro/excluirLivro/11",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"livro",
+								"excluirLivro",
+								"11"
 							]
 						}
 					},
