@@ -11,3 +11,14 @@ const Config = {
    },
 };
 export default Config;
+
+==============================================
+No back end, caso seu banco de dados possua senha, insira a senha no seguinte arquivo, dentro da pasta database > database.js:
+
+const connection = new Sequelize('api_hospital_bd', 'root', 'SUA SENHA', {
+   host: 'localhost',
+   dialect: 'mysql',
+   timezone: '-03:00',
+});
+
+Caso não possua senha, deixe em branco.
