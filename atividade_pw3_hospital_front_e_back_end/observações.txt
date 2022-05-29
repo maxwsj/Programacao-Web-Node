@@ -1,0 +1,13 @@
+No front-end, na pasta util > config.js
+Insira seu ip:
+const Config = {
+   API_URL: 'http://INSIRASEUIP:3007/',
+   TIMEOUT_REQUEST: 5000,
+   HEADER_REQUEST: {
+      post: {
+         'Acess-Control-Allow-Origin': true,
+      },
+      Accept: 'application/json',
+   },
+};
+export default Config;

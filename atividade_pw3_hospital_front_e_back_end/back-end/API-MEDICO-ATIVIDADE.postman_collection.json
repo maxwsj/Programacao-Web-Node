@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "ab6fe84b-6ff2-43a6-b40d-60651b205230",
+		"name": "API-MEDICO-ATIVIDADE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ESPECIALIDADE",
+			"item": [
+				{
+					"name": "listarEspecialidade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/especialidade/listarEspecialidade",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"especialidade",
+								"listarEspecialidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarEspecialidadeID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/especialidade/listarEspecialidade/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"especialidade",
+								"listarEspecialidade",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrarEspecialidade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_especialidade\":\"Oftalmologista\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/especialidade/cadastrarEspecialidade",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"especialidade",
+								"cadastrarEspecialidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterarEspecialidade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"nome_especialidade\":\"Oftalmologista\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/especialidade/alterarEspecialidade",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"especialidade",
+								"alterarEspecialidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluirEspecialidade",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/especialidade/excluirEspecialidade/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"especialidade",
+								"excluirEspecialidade",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MEDICO",
+			"item": [
+				{
+					"name": "listarMedico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medico/listarMedico",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medico",
+								"listarMedico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarMedicoID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medico/listarMedicoID/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medico",
+								"listarMedicoID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrarMedico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_medico\":\"Max William\",\r\n    \"email_medico\": \"max_teste@gmail.com\",\r\n    \"telefone_medico\": \"1141415555\",\r\n    \"celular_medico\": \"11910442388\",\r\n    \"tblEspecialidadeId\": \"1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/medico/cadastrarMedico",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medico",
+								"cadastrarMedico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterarMedico",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"nome_medico\":\"Max Willian\",\r\n    \"email_medico\": \"maxw_teste@gmail.com\",\r\n    \"telefone_medico\": \"1141426749\",\r\n    \"celular_medico\": \"11910452347\",\r\n    \"tblEspecialidadeId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/medico/alterarMedico",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medico",
+								"alterarMedico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluirMedico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/medico/excluirMedico/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medico",
+								"excluirMedico",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
