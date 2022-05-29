@@ -2,18 +2,7 @@ import React from 'react';
 import Button from './Button';
 import InfoFieldWrapper from './InfoFieldWrapper';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { uiActions } from '../../store/ui-slice';
-
 const ButtonsWrapper = ({ onShowForm, onShowOptions }) => {
-   const dispatch = useDispatch();
-
-   function toggleFormHandler() {
-      dispatch(uiActions.toggle());
-   }
-   function toggleOptionsScreenHandler() {
-      dispatch(uiActions.toggleFormOptions());
-   }
    return (
       <InfoFieldWrapper>
          <div className='mt-6 flex justify-between '>

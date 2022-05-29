@@ -51,7 +51,6 @@ class HospitalService {
          timeout: Config.TIMEOUT_REQUEST,
          headers: Config.HEADER_REQUEST,
       });
-      console.log(response);
    }
    async editSpecialty(specialtyData) {
       const response = await axios({
